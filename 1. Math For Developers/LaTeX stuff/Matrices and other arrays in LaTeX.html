@@ -1,0 +1,111 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>Matrices and other arrays in LaTeX</title>
+</head>
+<body vlink="#440088" text="#000000" link="#0000BB" bgcolor="#FFFFFF" alink="#FF0000">
+<h3>Matrices and other arrays in LaTeX</h3>
+
+<p>
+Matrices and other arrays are produced in LaTeX using the
+\textbf{array} environment. For example, suppose that we wish to
+typeset the following passage:
+</p><blockquote>
+<img src="Matrices%20and%20other%20arrays%20in%20LaTeX_files/EX_matrix.gif" alt="[GIF Image]"><!-- BeginTeX GIF="EX_matrix.gif"
+The \emph{characteristic polynomial} $\chi(\lambda)$ of the
+$3 \times 3$~matrix
+\[ \left( \begin{array}{ccc}
+a &amp; b &amp; c \\
+d &amp; e &amp; f \\
+g &amp; h &amp; i \end{array} \right)\] 
+is given by the formula
+\[ \chi(\lambda) = \left| \begin{array}{ccc}
+\lambda - a &amp; -b &amp; -c \\
+-d &amp; \lambda - e &amp; -f \\
+-g &amp; -h &amp; \lambda - i \end{array} \right|.\] 
+EndTeX -->
+</blockquote>
+This passage is produced by the following input:
+<blockquote>
+<pre>The \emph{characteristic polynomial} $\chi(\lambda)$ of the
+$3 \times 3$~matrix
+\[ \left( \begin{array}{ccc}
+a &amp; b &amp; c \\
+d &amp; e &amp; f \\
+g &amp; h &amp; i \end{array} \right)\] 
+is given by the formula
+\[ \chi(\lambda) = \left| \begin{array}{ccc}
+\lambda - a &amp; -b &amp; -c \\
+-d &amp; \lambda - e &amp; -f \\
+-g &amp; -h &amp; \lambda - i \end{array} \right|.\] 
+</pre>
+</blockquote>
+First of all, note the use of <code>\left</code> and <code>\right</code>
+to produce the large delimiters around the arrays. As we have
+already seen, if we use
+<blockquote>
+<code>\left)</code> ... <code>\right)</code>
+</blockquote>
+then the size of the parentheses is chosen to match the subformula
+that they enclose. Next note the use of the alignment tab
+character <code>&amp;</code> to separate the entries of the matrix and
+the use of <code>\\</code> to separate the rows of the matrix, exactly
+as in the construction of multiline formulae described above.
+We begin the array with <code>\begin{array}</code> and end it with
+<code>\end{array}</code>. The only thing left to explain, therefore,
+is the mysterious <code>{ccc}</code> which occurs immediately after
+<code>\begin{array}</code>.
+Now each of the <code>c</code>'s in <code>{ccc}</code> represents a
+column of the matrix and indicates that the entries of the
+column should be centred. If the <code>c</code> were replaced by
+<code>l</code> then the corresponding column would be typeset with
+all the entries left-justified, and <code>r</code> would produce a
+column with all entries right-justified. Thus
+<blockquote>
+<pre>\[ \begin{array}{lcr}
+\mbox{First number} &amp; x &amp; 8 \\
+\mbox{Second number} &amp; y &amp; 15 \\
+\mbox{Sum} &amp; x + y &amp; 23 \\
+\mbox{Difference} &amp; x - y &amp; -7 \\
+\mbox{Product} &amp; xy &amp; 120 \end{array}\] 
+</pre>
+</blockquote>
+produces
+<blockquote>
+<img src="Matrices%20and%20other%20arrays%20in%20LaTeX_files/EX_arrtab.gif" alt="[GIF Image]"><!-- BeginTeX GIF="EX_arrtab.gif"
+\[ \begin{array}{lcr}
+\mbox{First number} &amp; x &amp; 8 \\
+\mbox{Second number} &amp; y &amp; 15 \\
+\mbox{Sum} &amp; x + y &amp; 23 \\
+\mbox{Difference} &amp; x - y &amp; -7 \\
+\mbox{Product} &amp; xy &amp; 120 \end{array}\] 
+EndTeX -->
+</blockquote>
+<p></p>
+
+<p>
+We can use the array environment to produce formulae such as
+</p><blockquote>
+<img src="Matrices%20and%20other%20arrays%20in%20LaTeX_files/DM_cases.gif" alt="[GIF Image]"><!-- BeginTeX GIF="DM_cases.gif"
+\[ |x| = \left\{ \begin{array}{ll}
+         x &amp; \mbox{if $x \geq 0$};\\
+        -x &amp; \mbox{if $x &lt; 0$}.\end{array} \right.  \]
+EndTeX -->
+</blockquote>
+Note that both columns of this array are set flush left. Thus we
+use <code>{ll}</code> immediately after <code>\begin{array}</code>. The
+large brace is produced using <code>\left\{</code>. However this
+requires a corresponding <code>\right</code> delimiter to match it.
+We therefore use the \emph{null delimiter} <code>\right.</code>
+discussed earlier. This delimiter is invisible. We can
+therefore obtain the above formula by typing
+<blockquote>
+<pre>\[ |x| = \left\{ \begin{array}{ll}
+         x &amp; \mbox{if $x \geq 0$};\\
+        -x &amp; \mbox{if $x &lt; 0$}.\end{array} \right. \] 
+</pre>
+</blockquote>
+<p></p>
+
+
+
+</body></html>
